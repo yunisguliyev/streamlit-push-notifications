@@ -7,6 +7,17 @@ def send_push(title: str = "Pass TITLE as an argument 🔥",
             sound_path: str = "https://cdn.pixabay.com/audio/2024/02/19/audio_e4043ea6be.mp3",
             only_when_on_other_tab: bool = False,
             tag: str = "") -> None:
+    """
+  Sends a push notification to the user's browser.
+
+  Parameters:
+  - title (str): The title of the notification.
+  - body (str): The body text of the notification.
+  - icon_path (str): The file path to the icon image for the notification.
+  - sound_path (str, url): The file path or URL to the sound to play when the notification is sent.
+  - only_when_on_other_tab (bool): If True, the notification is sent only when the user is on another tab.
+  - tag (str): A tag to associate with the notification.
+  """
 
     try:
         icon_path_on_server = runtime.get_instance().media_file_mgr.add(icon_path, "image/png", "")
@@ -74,5 +85,11 @@ def send_push(title: str = "Pass TITLE as an argument 🔥",
 
 
 def send_alert(message):
+    """
+  Displays a simple alert dialog in the user's browser.
+
+  Parameters:
+  - message (str): The message to display in the alert dialog.
+  """
     script = '<script>' + f'window.alert("{message}")' + '</script>'
     html(script,width= 0, height= 0)
