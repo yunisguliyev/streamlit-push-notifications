@@ -1,4 +1,4 @@
-# Streamlit Push Notification Component
+# Streamlit Notification Component
 
 This repository contains a simple Python script that integrates with [Streamlit](https://streamlit.io) to send push notifications directly from your Streamlit app. The notifications can include a title, body, icon, and sound.
 
@@ -13,20 +13,20 @@ This repository contains a simple Python script that integrates with [Streamlit]
 ## Installation
 
    ```bash
-pip install git+https://github.com/yunisguliyev/streamlit-push-notifications.git
+pip install git+https://github.com/yunisguliyev/streamlit-notifications.git
    ```
 or  
 ```bash
-pip install streamlit-push-notifications
+pip install streamlit-notifications
 ```
 ## Usage
 ```Python
 import  streamlit  as  st
-from streamlit_push_notifications import send_alert, send_push
+from streamlit_notifications import send_alert, send_push
 
 st.write("Sending  notification alert!")
 if  st.button("send notification"):
-    send_alert(message="Hello from  streamlit_push_notifications ")
+    send_alert(message="Hello from  streamlit_notifications ")
     
 if  st.button("notification"):
     send_push(title= "Pass TITLE as an argument 🔥", body = "Pass BODY as an argument 👨🏻‍💻")
